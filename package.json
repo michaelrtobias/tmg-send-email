@@ -1,0 +1,26 @@
+{
+  "name": "tmg-send-email",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test",
+    "zipper": "zip -r9 build/sendEmail.zip .",
+    "pushtos3": "aws s3 sync --profile TMG_michael --acl private build/ s3://mundo-group-lambda-code/lambdas",
+    "deploy": "npm run zipper && npm run pushtos3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/michaelrtobias/tmg-send-email.git"
+  },
+  "author": "Michael Tobias",
+  "bugs": {
+    "url": "https://github.com/michaelrtobias/tmg-send-email/issues"
+  },
+  "homepage": "https://github.com/michaelrtobias/tmg-send-email#readme",
+  "dependencies": {
+    "aws-sdk": "^2.1062.0",
+    "axios": "^0.25.0",
+    "prettier": "^2.5.1"
+  }
+}
