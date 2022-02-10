@@ -4,8 +4,9 @@ exports.handler = function ({ args: data }) {
   try {
     console.log("results:", results);
     console.log("results first name:", results.first_name);
-    return results;
+    console.log("results type:", results.type);
   } catch (e) {
     throw e;
   }
+  return results;
 };
