@@ -6,8 +6,12 @@
   "scripts": {
     "test": "npm run test",
     "zipper": "zip -r9 build/sendEmail.zip .",
-    "pushtos3": "aws s3 sync --profile TMG_michael --acl private build/ s3://mundo-group-lambda-code/lambdas",
-    "deploy": "npm run zipper && npm run pushtos3"
+    "push-to-s3": "aws s3 sync --profile TMG_michael --acl private build/ s3://mundo-group-lambda-code/lambdas",
+    "push-to-s3-codebuild": "aws s3 sync --acl private build/ s3://mundo-group-lambda-code/lambdas",
+    "deploy": "npm run zipper && npm run push-to-s3",
+    "update-lambda": "aws --region us-east-1 lambda update-function-code --function-name send-email --s3-bucket mundo-group-lambda-code --s3-key lambdas/sendEmail.zip --publish",
+    "update-lambda-local": "aws --region us-east-1 lambda update-function-code --profile TMG_michael --function-name send-email --s3-bucket mundo-group-lambda-code --s3-key lambdas/sendEmail.zip --publish",
+    "local-deploy": "npm run deploy && npm run update-lambda-local"
   },
   "repository": {
     "type": "git",
