@@ -13,6 +13,7 @@ phases:
   build:
     commands:
       - echo "bundling the applictaion"
+      - mkdir build
       - npm run zipper
       - echo "build is successful"
   post_build:
