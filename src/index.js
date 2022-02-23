@@ -6,5 +6,5 @@ exports.handler = function (event) {
   } catch (e) {
     throw e;
   }
-  return JSON.stringify(body);
+  return JSON.stringify(event.body);
 };
