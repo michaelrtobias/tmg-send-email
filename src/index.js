@@ -6,5 +6,5 @@ exports.handler = async (event) => {
   // } catch (e) {
   //   throw e;
   // }
-  return JSON.stringify(event);
+  return event.args.contactInfo.first_name;
 };
