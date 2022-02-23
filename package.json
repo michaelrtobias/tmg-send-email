@@ -26,5 +26,8 @@
     "aws-sdk": "^2.1062.0",
     "axios": "^0.25.0",
     "prettier": "^2.5.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.9.0"
   }
 }
