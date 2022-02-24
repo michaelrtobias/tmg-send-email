@@ -2,6 +2,7 @@
 exports.handler = async (event) => {
   console.log("event:", event);
   let { body: contactInfo } = event;
+  console.log("typeof", typeof contactInfo);
   contactInfo =
     typeof contactInfo === "string" ? JSON.parse(contactInfo) : contactInfo;
   // try {
