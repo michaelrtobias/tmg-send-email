@@ -1,7 +1,8 @@
 // const AWS = require("aws-sdk");
 exports.handler = async (event) => {
   console.log("event:", event);
-  let { body: contactInfo } = event;
+  const { Records } = event;
+  let contactInfo = Records[0].body;
   console.log("typeof", typeof contactInfo);
   contactInfo =
     typeof contactInfo === "string" ? JSON.parse(contactInfo) : contactInfo;
