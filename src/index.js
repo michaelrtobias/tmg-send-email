@@ -11,5 +11,6 @@ exports.handler = async (event) => {
   // } catch (e) {
   //   throw e;
   // }
+  console.log("first name:", contactInfo.first_name);
   return contactInfo.first_name;
 };
