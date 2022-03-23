@@ -16,7 +16,7 @@ exports.handler = async (event) => {
     Message: {
       Body: {
         Html: {
-          Data: `<h1>Hello, You have a new lead!</h1><h3>Below is the contact information</h3><ul><li>First Name: ${contactInfo.first_name}</li><li>Last Name: ${contactInfo.last_name}</li><li>Phone: ${contactInfo.phone}</li><li>Email: ${contactInfo.email}</li></ul><h3>Have a great day!</h3>`,
+          Data: `<h1>Hello, You have a new lead!</h1><h3>Below is the contact information</h3><ul><li>First Name: ${contactInfo.first_name}</li><li>Last Name: ${contactInfo.last_name}</li><li>Phone: ${contactInfo.phone}</li><li>Email: ${contactInfo.email}</li><li>Type: ${contactInfo.type}</li><li>Make: ${contactInfo.make}</li><li>Make: ${contactInfo.model}</li><li>Description: ${contactInfo.description}</li></ul><h3>Have a great day!</h3>`,
           Charset: "utf-8",
         },
         Text: {
